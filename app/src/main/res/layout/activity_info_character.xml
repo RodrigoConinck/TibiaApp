@@ -99,4 +99,50 @@
         app:layout_constraintStart_toStartOf="@+id/character_vocacao"
         app:layout_constraintTop_toBottomOf="@+id/character_vocacao" />
 
+    <TextView
+        android:id="@+id/guild_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:text="Guild:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomes_antigos_view"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/guild_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/guild_view"
+        app:layout_constraintTop_toBottomOf="@+id/former_names"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="de "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guild"
+        app:layout_constraintTop_toBottomOf="@+id/former_names"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/guild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="88dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/former_names"
+        app:layout_constraintVertical_bias="0.068" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

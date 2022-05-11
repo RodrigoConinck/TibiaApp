@@ -18,6 +18,8 @@ public class InfoCharacter extends AppCompatActivity {
     private TextView cMundo;
     private TextView cVocacao;
     private TextView cFormerNames;
+    private TextView cGuild;
+    private TextView cGuildRank;
 
 
     @Override
@@ -32,6 +34,8 @@ public class InfoCharacter extends AppCompatActivity {
         cMundo = findViewById(R.id.character_mundo);
         cVocacao = findViewById(R.id.character_vocacao);
         cFormerNames = findViewById(R.id.former_names);
+        cGuild = findViewById(R.id.guild);
+        cGuildRank = findViewById(R.id.guild_rank);
 
         Data data = (Data) intent.getSerializableExtra(MainActivity.EXTRA_TIBIA);
         cNome.setText(data.getName());
