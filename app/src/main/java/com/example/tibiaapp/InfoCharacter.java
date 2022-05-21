@@ -5,11 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.tibiaapp.Model.Character;
-import com.example.tibiaapp.Model.Characters;
 import com.example.tibiaapp.Model.Data;
 
 public class InfoCharacter extends AppCompatActivity {
@@ -42,6 +39,17 @@ public class InfoCharacter extends AppCompatActivity {
         cLevel.setText(data.getLevel());
         cMundo.setText(data.getWorld());
         cVocacao.setText(data.getVocation());
+
+        if(data.getGuild() != null){
+            cGuild.setText(data.getGuild().getName());
+            cGuildRank.setText(data.getGuild().getRank());
+        }
+        else{
+            findViewById(R.id.guild).setVisibility(View.INVISIBLE);
+            findViewById(R.id.guild_rank).setVisibility(View.INVISIBLE);
+            findViewById(R.id.guild_view).setVisibility(View.INVISIBLE);
+            findViewById(R.id.de).setVisibility(View.INVISIBLE);
+        }
         if (data.getFormerNames() != null) {
             cFormerNames.setText(data.getFormerNames().toString());
         }

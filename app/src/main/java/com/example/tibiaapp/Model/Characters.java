@@ -17,7 +17,7 @@ public class Characters {
 
     @Override
     public String toString() {
-        return "Data{" +
+        return "Characters{" +
                 "data=" + data +
                 '}';
     }

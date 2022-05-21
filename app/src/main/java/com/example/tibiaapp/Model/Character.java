@@ -19,7 +19,7 @@ public class Character implements Serializable {
 
     @Override
     public String toString() {
-        return "Characters{" +
+        return "Character{" +
                 "characters=" + characters +
                 '}';
     }
