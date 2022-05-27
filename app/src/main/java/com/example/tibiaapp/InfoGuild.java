@@ -22,7 +22,7 @@ public class InfoGuild extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_character);
+        setContentView(R.layout.activity_info_guild);
 
         Intent intent = getIntent();
 

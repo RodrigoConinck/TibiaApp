@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tibiaapp.Model.Guild;
-import com.example.tibiaapp.service.TibiaApiClientGuild;
+import com.example.tibiaapp.service.TibiaApiClient;
 import com.example.tibiaapp.service.TibiaServiceGuild;
 
 import retrofit2.Call;
@@ -43,7 +43,7 @@ public class GuildQuery extends AppCompatActivity {
         }
         else {
             name = name.replace(' ', '+');
-            TibiaServiceGuild service = TibiaApiClientGuild.getClient().create(TibiaServiceGuild.class);
+            TibiaServiceGuild service = TibiaApiClient.getClient().create(TibiaServiceGuild.class);
             Call<Guild> call = service.getGuild(name);
             call.enqueue(new Callback<Guild>() {
                 @Override

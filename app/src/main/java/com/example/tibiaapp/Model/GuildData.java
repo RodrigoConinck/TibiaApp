@@ -1,22 +1,19 @@
 package com.example.tibiaapp.Model;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
-import java.util.List;
 
 public class GuildData implements Serializable {
     private String name;
     private String description;
-    private String foundation;
-    private Integer membersTotal;
+    private String founded;
+    private Integer members_total;
     private String world;
 
-    public GuildData(String name, String description, String foundation, Integer members_total, String world) {
+    public GuildData(String name, String description, String founded, Integer members_total, String world) {
         this.name = name;
         this.description = description;
-        this.foundation = foundation;
-        this.membersTotal = members_total;
+        this.founded = founded;
+        this.members_total = members_total;
         this.world = world;
     }
 
@@ -37,19 +34,19 @@ public class GuildData implements Serializable {
     }
 
     public String getFoundation() {
-        return foundation;
+        return founded;
     }
 
     public void setFoundation(String founded) {
-        this.foundation = founded;
+        this.founded = founded;
     }
 
     public Integer getMembersTotal() {
-        return membersTotal;
+        return members_total;
     }
 
     public void setMembersTotal(Integer members_total) {
-        this.membersTotal = members_total;
+        this.members_total = members_total;
     }
 
     public String getWorld() {
@@ -65,8 +62,8 @@ public class GuildData implements Serializable {
         return "GuildData{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", foundation='" + foundation + '\'' +
-                ", memberQty=" + membersTotal +
+                ", foundation='" + founded + '\'' +
+                ", memberQty=" + members_total +
                 ", world='" + world + '\'' +
                 '}';
     }

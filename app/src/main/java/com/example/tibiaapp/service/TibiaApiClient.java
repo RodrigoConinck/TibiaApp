@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TibiaApiClient {
-    public static final String BASE_URL = "https://api.tibiadata.com/v2/character/";
+    public static final String BASE_URL = "https://api.tibiadata.com/";
     private static Retrofit retrofit;
 
     public static Retrofit getClient(){
