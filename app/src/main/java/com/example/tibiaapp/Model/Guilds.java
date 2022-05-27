@@ -1,23 +1,23 @@
 package com.example.tibiaapp.Model;
 
-public class Characters {
-    private Data data;
+public class Guilds {
+    private GuildData data;
 
-    public Characters(Data data) {
+    public Guilds(GuildData data) {
         this.data = data;
     }
 
-    public Data getData() {
+    public GuildData getData() {
         return data;
     }
 
-    public void setData(Data data) {
+    public void setData(GuildData data) {
         this.data = data;
     }
 
     @Override
     public String toString() {
-        return "Characters{" +
+        return "Guilds{" +
                 "data=" + data +
                 '}';
     }

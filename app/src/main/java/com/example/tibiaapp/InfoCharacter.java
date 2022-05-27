@@ -34,15 +34,15 @@ public class InfoCharacter extends AppCompatActivity {
         cGuild = findViewById(R.id.guild);
         cGuildRank = findViewById(R.id.guild_rank);
 
-        Data data = (Data) intent.getSerializableExtra(MainActivity.EXTRA_TIBIA);
+        Data data = (Data) intent.getSerializableExtra(CharacterQuery.EXTRA_TIBIA);
         cNome.setText(data.getName());
         cLevel.setText(data.getLevel());
         cMundo.setText(data.getWorld());
         cVocacao.setText(data.getVocation());
 
         if(data.getGuild() != null){
-            cGuild.setText(data.getGuild().getGuildName());
-            cGuildRank.setText(data.getGuild().getGuildRank());
+            cGuild.setText(data.getGuild().getCGuildName());
+            cGuildRank.setText(data.getGuild().getCGuildRank());
         }
         else{
             findViewById(R.id.guild).setVisibility(View.INVISIBLE);
