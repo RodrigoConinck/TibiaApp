@@ -1,4 +1,4 @@
-package com.example.tibiaapp;
+package com.example.tibiaapp.service;
 
 import com.example.tibiaapp.Model.Character;
 

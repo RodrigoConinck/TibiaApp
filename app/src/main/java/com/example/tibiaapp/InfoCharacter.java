@@ -34,7 +34,7 @@ public class InfoCharacter extends AppCompatActivity {
         cGuild = findViewById(R.id.guild);
         cGuildRank = findViewById(R.id.guild_rank);
 
-        Data data = (Data) intent.getSerializableExtra(CharacterQuery.EXTRA_TIBIA);
+        Data data = (Data)intent.getSerializableExtra(CharacterQuery.EXTRA_TIBIA);
         cNome.setText(data.getName());
         cLevel.setText(data.getLevel());
         cMundo.setText(data.getWorld());

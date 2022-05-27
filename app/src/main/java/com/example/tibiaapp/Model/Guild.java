@@ -19,8 +19,8 @@ public class Guild implements Serializable {
 
     @Override
     public String toString() {
-        return "Character{" +
-                "characters=" + guilds +
+        return "Guilds{" +
+                "guilds=" + guilds +
                 '}';
     }
 }

@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tibiaapp.Model.Data;
+import com.example.tibiaapp.Model.GuildData;
 
 public class InfoGuild extends AppCompatActivity {
     private TextView gName;
@@ -33,12 +33,12 @@ public class InfoGuild extends AppCompatActivity {
         gWorld = findViewById(R.id.guild_world);
 
 
-        Data data = (Data) intent.getSerializableExtra(GuildQuery.EXTRA_TIBIA);
+        GuildData data = (GuildData)intent.getSerializableExtra(GuildQuery.EXTRA_TIBIA);
         gName.setText(data.getName());
-        gDescription.setText(data.getLevel());
+        gDescription.setText(data.getDescription());
         gWorld.setText(data.getWorld());
-        gFoundation.setText(data.getVocation());
-        gMemberQty.setText(data.getVocation());
+        gFoundation.setText(data.getFoundation());
+        gMemberQty.setText(data.getMembersTotal());
     }
 
 

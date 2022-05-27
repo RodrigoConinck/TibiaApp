@@ -82,7 +82,7 @@
         tools:text="Placeholder" />
 
     <TextView
-        android:id="@+id/guild_world"
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -91,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
-        android:id="@+id/former_names"
+        android:id="@+id/guild_world"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
