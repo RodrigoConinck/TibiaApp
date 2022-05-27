@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface TibiaServiceGuild{
-    @GET("v3/guild/{name}.json")
+    @GET("v2/guild/{name}.json")
     Call<Guild> getGuild(@Path("name") String name);
 }
