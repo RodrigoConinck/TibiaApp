@@ -41,8 +41,8 @@ public class InfoCharacter extends AppCompatActivity {
         cVocacao.setText(data.getVocation());
 
         if(data.getGuild() != null){
-            cGuild.setText(data.getGuild().getName());
-            cGuildRank.setText(data.getGuild().getRank());
+            cGuild.setText(data.getGuild().getGuildName());
+            cGuildRank.setText(data.getGuild().getGuildRank());
         }
         else{
             findViewById(R.id.guild).setVisibility(View.INVISIBLE);
@@ -60,6 +60,7 @@ public class InfoCharacter extends AppCompatActivity {
     }
 
 
-
-
+    public void finishActivity(View view) {
+        this.finish();
+    }
 }

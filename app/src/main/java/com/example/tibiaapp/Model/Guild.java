@@ -11,7 +11,7 @@ public class Guild implements Serializable {
         this.rank = rank;
     }
 
-    public String getName() {
+    public String getGuildName() {
         return name;
     }
 
@@ -19,7 +19,7 @@ public class Guild implements Serializable {
         this.name = name;
     }
 
-    public String getRank() {
+    public String getGuildRank() {
         return rank;
     }
 
