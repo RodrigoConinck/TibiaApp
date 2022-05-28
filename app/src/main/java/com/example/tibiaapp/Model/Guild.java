@@ -1,6 +1,5 @@
 package com.example.tibiaapp.Model;
 
-
 import java.io.Serializable;
 
 public class Guild implements Serializable {

@@ -40,9 +40,9 @@ public class InfoCharacter extends AppCompatActivity {
         cMundo.setText(data.getWorld());
         cVocacao.setText(data.getVocation());
 
-        if(data.getGuild() != null){
-            cGuild.setText(data.getGuild().getCGuildName());
-            cGuildRank.setText(data.getGuild().getCGuildRank());
+        if(data.getCGuild() != null){
+            cGuild.setText(data.getCGuild().getCGuildName());
+            cGuildRank.setText(data.getCGuild().getCGuildRank());
         }
         else{
             findViewById(R.id.guild).setVisibility(View.INVISIBLE);

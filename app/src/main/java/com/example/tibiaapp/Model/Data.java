@@ -18,7 +18,7 @@ public class Data implements Serializable {
         this.guild = guild;
     }
 
-    public CharacterGuild getGuild() {
+    public CharacterGuild getCGuild() {
         return guild;
     }
 

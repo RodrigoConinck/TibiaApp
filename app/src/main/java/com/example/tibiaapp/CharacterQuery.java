@@ -18,7 +18,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CharacterQuery extends AppCompatActivity {
-    public static final String TAG = "MainActivity";
+    public static final String TAG = "CharacterSearch";
     private Character character;
     public static final int TEXT_REQUEST = 1;
     public static final String EXTRA_TIBIA = "EXTRA_TIBIA";

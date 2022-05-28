@@ -6,14 +6,14 @@ public class GuildData implements Serializable {
     private String name;
     private String description;
     private String founded;
-    private Integer totalmembers;
+    private String homepage;
     private String world;
 
-    public GuildData(String name, String description, String founded, Integer totalmembers, String world) {
+    public GuildData(String name, String description, String founded, String homepage, String world) {
         this.name = name;
         this.description = description;
         this.founded = founded;
-        this.totalmembers = totalmembers;
+        this.homepage = homepage;
         this.world = world;
     }
 
@@ -41,12 +41,12 @@ public class GuildData implements Serializable {
         this.founded = founded;
     }
 
-    public Integer getMembersTotal() {
-        return totalmembers;
+    public String getMembersTotal() {
+        return homepage;
     }
 
-    public void setMembersTotal(Integer members_total) {
-        this.totalmembers = totalmembers;
+    public void setMembersTotal(String homepage) {
+        this.homepage = homepage;
     }
 
     public String getWorld() {
@@ -63,7 +63,7 @@ public class GuildData implements Serializable {
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", foundation='" + founded + '\'' +
-                ", memberQty=" + totalmembers +
+                ", memberQty=" + homepage +
                 ", world='" + world + '\'' +
                 '}';
     }
