@@ -12,17 +12,17 @@ public class Data implements Serializable {
     private String vocation;
     @SerializedName("former_names")
     private List<String> formerNames;
-    private Guild guild;
+    private CharacterGuild guild;
 
-    public Data(Guild guild) {
+    public Data(CharacterGuild guild) {
         this.guild = guild;
     }
 
-    public Guild getGuild() {
+    public CharacterGuild getCGuild() {
         return guild;
     }
 
-    public void setGuild(Guild guild) {
+    public void setGuild(CharacterGuild guild) {
         this.guild = guild;
     }
 

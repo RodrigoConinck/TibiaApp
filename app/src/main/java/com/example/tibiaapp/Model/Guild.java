@@ -3,35 +3,24 @@ package com.example.tibiaapp.Model;
 import java.io.Serializable;
 
 public class Guild implements Serializable {
-    private String name;
-    private String rank;
+    private Guilds guilds;
 
-    public Guild(String guildName, String guildRank) {
-        this.name = name;
-        this.rank = rank;
+    public Guild(Guilds guilds) {
+        this.guilds = guilds;
     }
 
-    public String getName() {
-        return name;
+    public Guilds getGuilds() {
+        return guilds;
     }
 
-    public void setGuildName(String name) {
-        this.name = name;
-    }
-
-    public String getRank() {
-        return rank;
-    }
-
-    public void setGuildRank(String guildRank) {
-        this.rank = rank;
+    public void setGuilds(Guilds guilds) {
+        this.guilds = guilds;
     }
 
     @Override
     public String toString() {
-        return "Guild{" +
-                ", name='" + name + '\'' +
-                ", rank='" + rank + '\'' +
+        return "Guilds{" +
+                "guilds=" + guilds +
                 '}';
     }
 }

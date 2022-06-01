@@ -1,4 +1,4 @@
-package com.example.tibiaapp;
+package com.example.tibiaapp.service;
 
 import com.example.tibiaapp.Model.Character;
 
@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface TibiaService {
-    @GET("{name}.json")
+    @GET("/v2/characters/{name}.json")
     Call<Character> getCharacter(@Path("name") String name);
 }

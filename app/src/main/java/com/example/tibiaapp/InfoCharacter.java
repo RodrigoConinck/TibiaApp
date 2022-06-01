@@ -34,15 +34,15 @@ public class InfoCharacter extends AppCompatActivity {
         cGuild = findViewById(R.id.guild);
         cGuildRank = findViewById(R.id.guild_rank);
 
-        Data data = (Data) intent.getSerializableExtra(MainActivity.EXTRA_TIBIA);
+        Data data = (Data)intent.getSerializableExtra(CharacterQuery.EXTRA_TIBIA);
         cNome.setText(data.getName());
         cLevel.setText(data.getLevel());
         cMundo.setText(data.getWorld());
         cVocacao.setText(data.getVocation());
 
-        if(data.getGuild() != null){
-            cGuild.setText(data.getGuild().getName());
-            cGuildRank.setText(data.getGuild().getRank());
+        if(data.getCGuild() != null){
+            cGuild.setText(data.getCGuild().getCGuildName());
+            cGuildRank.setText(data.getCGuild().getCGuildRank());
         }
         else{
             findViewById(R.id.guild).setVisibility(View.INVISIBLE);
@@ -60,6 +60,7 @@ public class InfoCharacter extends AppCompatActivity {
     }
 
 
-
-
+    public void finishActivity(View view) {
+        this.finish();
+    }
 }
