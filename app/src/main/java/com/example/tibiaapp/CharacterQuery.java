@@ -1,7 +1,5 @@
 package com.example.tibiaapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.tibiaapp.Model.Character;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tibiaapp.model.character.Data;
 import com.example.tibiaapp.service.TibiaApiClient;
 import com.example.tibiaapp.service.TibiaService;
 
@@ -19,7 +19,7 @@ import retrofit2.Response;
 
 public class CharacterQuery extends AppCompatActivity {
     public static final String TAG = "CharacterSearch";
-    private Character character;
+    private Data character;
     public static final int TEXT_REQUEST = 1;
     public static final String EXTRA_TIBIA = "EXTRA_TIBIA";
     private EditText characterName;
@@ -44,26 +44,26 @@ public class CharacterQuery extends AppCompatActivity {
         else {
             name = name.replace(' ', '+');
             TibiaService service = TibiaApiClient.getClient().create(TibiaService.class);
-            Call<Character> call = service.getCharacter(name);
-            call.enqueue(new Callback<Character>() {
+            Call<Data> call = service.getCharacter(name);
+            call.enqueue(new Callback<Data>() {
                 @Override
-                public void onResponse(Call<Character> call, Response<Character> response) {
+                public void onResponse(Call<Data> call, Response<Data> response) {
                     character = response.body();
                     Log.d(TAG, "onResponse: " + character);
 
-                    if (character.getCharacters().getData().getName()==null){
+                    if (character.getCharacters().getCharacter().getName()==null){
                         Toast.makeText(getApplicationContext(), "Esse personagem não existe.", Toast.LENGTH_LONG).show();
                         Log.d(TAG, "onResponse: Não existe");
                     }
                     else {
                         Intent intent = new Intent(getApplicationContext(), InfoCharacter.class);
-                        intent.putExtra(EXTRA_TIBIA, character.getCharacters().getData());
+                        intent.putExtra(EXTRA_TIBIA, character.getCharacters().getCharacter());
                         startActivity(intent);
                     }
                 }
 
                 @Override
-                public void onFailure(Call<Character> call, Throwable t) {
+                public void onFailure(Call<Data> call, Throwable t) {
                     Log.e(TAG, "onFailure: " + t.toString(), t);
                 }
             });

@@ -9,9 +9,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tibiaapp.Model.Guild;
+import com.example.tibiaapp.model.guild.GuildData;
 import com.example.tibiaapp.service.TibiaApiClient;
-import com.example.tibiaapp.service.TibiaServiceGuild;
+import com.example.tibiaapp.service.TibiaService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,7 +19,7 @@ import retrofit2.Response;
 
 public class GuildQuery extends AppCompatActivity {
     public static final String TAG = "GuildSearch";
-    private Guild guild;
+    private GuildData guild;
     public static final int TEXT_REQUEST = 1;
     public static final String EXTRA_TIBIA = "EXTRA_TIBIA";
     private EditText guildName;
@@ -43,27 +43,27 @@ public class GuildQuery extends AppCompatActivity {
         }
         else {
             name = name.replace(' ', '+');
-            TibiaServiceGuild service = TibiaApiClient.getClient().create(TibiaServiceGuild.class);
-            Call<Guild> call = service.getGuild(name);
-            call.enqueue(new Callback<Guild>() {
+            TibiaService service = TibiaApiClient.getClient().create(TibiaService.class);
+            Call<GuildData> call = service.getGuild(name);
+            call.enqueue(new Callback<GuildData>() {
                 @Override
-                public void onResponse(Call<Guild> call, Response<Guild> response) {
+                public void onResponse(Call<GuildData> call, Response<GuildData> response) {
                     guild = response.body();
                     Log.d(TAG, "onResponse: " + guild);
 
-                    if (guild.getGuilds().getData().getName()==null){
+                    if (guild.getGuilds().getGuild().getName()==null){
                         Toast.makeText(getApplicationContext(), "Essa guilda não existe.", Toast.LENGTH_LONG).show();
                         Log.d(TAG, "onResponse: Não existe");
                     }
                     else {
                         Intent intent = new Intent(getApplicationContext(), InfoGuild.class);
-                        intent.putExtra(EXTRA_TIBIA, guild.getGuilds().getData());
+                        intent.putExtra(EXTRA_TIBIA, guild.getGuilds().getGuild());
                         startActivity(intent);
                     }
                 }
 
                 @Override
-                public void onFailure(Call<Guild> call, Throwable t) {
+                public void onFailure(Call<GuildData> call, Throwable t) {
                     Log.e(TAG, "onFailure: " + t.toString(), t);
                 }
             });

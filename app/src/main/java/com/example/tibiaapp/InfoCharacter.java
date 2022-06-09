@@ -1,13 +1,13 @@
 package com.example.tibiaapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.tibiaapp.Model.Data;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tibiaapp.model.character.Character;
 
 public class InfoCharacter extends AppCompatActivity {
     private TextView cNome;
@@ -34,15 +34,15 @@ public class InfoCharacter extends AppCompatActivity {
         cGuild = findViewById(R.id.guild);
         cGuildRank = findViewById(R.id.guild_rank);
 
-        Data data = (Data)intent.getSerializableExtra(CharacterQuery.EXTRA_TIBIA);
+        Character data = (Character) intent.getSerializableExtra(CharacterQuery.EXTRA_TIBIA);
         cNome.setText(data.getName());
-        cLevel.setText(data.getLevel());
+        cLevel.setText(String.valueOf(data.getLevel()));
         cMundo.setText(data.getWorld());
         cVocacao.setText(data.getVocation());
 
-        if(data.getCGuild() != null){
-            cGuild.setText(data.getCGuild().getCGuildName());
-            cGuildRank.setText(data.getCGuild().getCGuildRank());
+        if(data.getGuild() != null){
+            cGuild.setText(data.getGuild().getName());
+            cGuildRank.setText(data.getGuild().getRank());
         }
         else{
             findViewById(R.id.guild).setVisibility(View.INVISIBLE);
