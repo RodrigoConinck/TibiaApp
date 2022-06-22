@@ -39,7 +39,7 @@ public class GuildQuery extends AppCompatActivity {
         String name = guildName.getText().toString();
         if (name.equals("")){
             Toast.makeText(this, "Insira o nome da guilda.", Toast.LENGTH_SHORT).show();
-            Log.d(TAG, "infoGuild: Nome da guilda Vazio");
+            Log.d(TAG, "infoGuild: Nome da guild Vazio");
         }
         else {
             name = name.replace(' ', '+');
