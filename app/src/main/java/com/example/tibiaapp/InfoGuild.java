@@ -44,15 +44,10 @@ public class InfoGuild extends AppCompatActivity {
         gFoundation.setText(data.getFounded());
         gMemberQty.setText(String.valueOf(data.getMembersTotal()));
 
-        ListView listView = (ListView) findViewById(R.id.members_list);
-
         Member member = new Member();
         for (Member member1 : data.getMembers()) {
             System.out.println(member1.getName());
-
         }
-
-
 
     }
 
